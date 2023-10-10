@@ -1,0 +1,3 @@
+node_modules
+gcp-service-acc.json
+.env
