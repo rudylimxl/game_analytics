@@ -12,7 +12,10 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Card } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 
 const defaultTheme = createTheme();
 
@@ -34,7 +37,7 @@ export default function SignInSide() {
           item
           xs={false}
           sm={4}
-          md={7}
+          md={5}
           sx={{
             backgroundImage:
               "url(https://source.unsplash.com/random?wallpapers)",
@@ -47,7 +50,7 @@ export default function SignInSide() {
             backgroundPosition: "center",
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={7} component={Paper} elevation={6} square>
           <Box
             sx={{
               my: 8,
@@ -67,18 +70,101 @@ export default function SignInSide() {
               This build utilizes...
             </Typography>
             <Box className="flex">
-              <Paper style={{ padding: "5px", height: "100%" }} elevation={3}>
-                <img
-                  height="80px"
-                  src="https://cdn.icon-icons.com/icons2/2699/PNG/512/google_bigquery_logo_icon_168150.png"
-                ></img>
-              </Paper>
-              <Paper style={{ padding: "5px", height: "100%" }} elevation={3}>
-                <img
-                  height="80px"
-                  src="data:image/png;base64,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"
-                ></img>
-              </Paper>
+              <Card
+                elevation={2}
+                sx={{ maxWidth: 250, margin: "0 auto", padding: "0.1em" }}
+              >
+                <CardMedia
+                  component="img"
+                  height="120"
+                  sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+                  image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png"
+                  title="nodejs"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    NodeJS
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Express Back-end
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card
+                elevation={2}
+                sx={{ maxWidth: 250, margin: "0 auto", padding: "0.1em" }}
+              >
+                <CardMedia
+                  component="img"
+                  height="120"
+                  sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+                  image="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                  title="react"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    React
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    React Front-end
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card
+                elevation={2}
+                sx={{ maxWidth: 250, margin: "0 auto", padding: "0.1em" }}
+              >
+                <CardMedia
+                  component="img"
+                  height="120"
+                  sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+                  image="https://cdn.icon-icons.com/icons2/2699/PNG/512/google_bigquery_logo_icon_168150.png"
+                  title="bigquery"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    BigQuery
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Serverless, fully managed, petabyte-scale analytics data
+                    warehouse
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Link href="https://cloud.google.com/bigquery">
+                    <Button size="small">Learn More</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+
+              <Card
+                elevation={2}
+                sx={{ maxWidth: 250, margin: "0 auto", padding: "0.1em" }}
+              >
+                <CardMedia
+                  component="img"
+                  height="120"
+                  sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+                  image="data:image/png;base64,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"
+                  title="looker"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    Looker
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Enterprise platform for real-time BI, data applications, and
+                    embedded analytics.
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Link href="https://cloud.google.com/looker">
+                    <Button size="small">Learn More</Button>
+                  </Link>
+                </CardActions>
+              </Card>
             </Box>
             <Box
               sx={{
