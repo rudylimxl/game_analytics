@@ -17,7 +17,7 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems, secondaryListItems } from "./listItems";
+import { mainListItems } from "./listItems";
 
 function Copyright(props) {
   return (
@@ -94,7 +94,7 @@ export default function Sidebar() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", height: "100vh" }}>
         <CssBaseline />
         <Drawer variant="permanent" open={open}>
           <Toolbar
@@ -113,7 +113,6 @@ export default function Sidebar() {
           <List component="nav">
             {mainListItems}
             <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
           </List>
         </Drawer>
       </Box>
