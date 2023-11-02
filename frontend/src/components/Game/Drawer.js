@@ -17,7 +17,17 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems } from "./listItems";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import PeopleIcon from "@mui/icons-material/People";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import LayersIcon from "@mui/icons-material/Layers";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+import { TextField } from "@mui/material";
 
 function Copyright(props) {
   return (
@@ -86,7 +96,7 @@ const Drawer = styled(MuiDrawer, {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -111,7 +121,38 @@ export default function Sidebar() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+              <React.Fragment>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DashboardIcon />
+                  </ListItemIcon>
+                  <TextField defaultValue={"User1"} placeholder="Username" inputRef={props.refs.username}></TextField>
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ShoppingCartIcon />
+                  </ListItemIcon>
+                  <TextField defaultValue={"user@test.com"} placeholder="Email" inputRef={props.refs.email}></TextField>
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PeopleIcon />
+                  </ListItemIcon>
+                  <TextField defaultValue={"30"} placeholder="Age" inputRef={props.refs.age}></TextField>
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <BarChartIcon />
+                  </ListItemIcon>
+                  <TextField defaultValue={"M"} placeholder="Gender" inputRef={props.refs.gender}></TextField>
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <LayersIcon />
+                  </ListItemIcon>
+                  <TextField defaultValue={"Singapore"} placeholder="Location" inputRef={props.refs.location}></TextField>
+                </ListItemButton>
+              </React.Fragment>
             <Divider sx={{ my: 1 }} />
           </List>
         </Drawer>

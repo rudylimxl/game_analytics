@@ -58,7 +58,7 @@ const shuffleCards = (array) => {
 //      </Paper>
 // });
 
-const CardArray = () => {
+const CardArray = (refs) => {
   const [cards, setCards] = useState(() =>
     shuffleCards(cardArr.concat(cardArr))
   );
@@ -88,12 +88,34 @@ const CardArray = () => {
       sequence: sequence.toString(),
       clear_sequence: clearSequence.toString(),
       complete: bool,
+      username: refs.refs.refs.username.current.value
     };
   };
+
+  const userJsonData = () => {
+    return {
+      username: refs.refs.refs.username.current.value,
+      email: refs.refs.refs.email.current.value,
+      age: refs.refs.refs.age.current.value,
+      gender: refs.refs.refs.gender.current.value,
+      location: refs.refs.refs.location.current.value,
+    }
+  }
 
   const writeBigQuery = (bool) => {
     axios
       .post("http://localhost:8000/plays", jsonData(bool))
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const writeBigQueryUser = () => {
+    axios
+      .post("http://localhost:8000/plays/user", userJsonData())
       .then((response) => {
         console.log(response);
       })
@@ -109,6 +131,7 @@ const CardArray = () => {
       setBestScore(highScore);
       localStorage.setItem("bestScore", highScore);
       writeBigQuery(true);
+      writeBigQueryUser();
     }
   };
 
@@ -175,6 +198,7 @@ const CardArray = () => {
     // set a shuffled deck of cards
     setCards(shuffleCards(cardArr.concat(cardArr)));
     writeBigQuery(false);
+    writeBigQueryUser();
   };
 
   const handleRestartNoWrite = () => {
@@ -228,6 +252,7 @@ const CardArray = () => {
         </div>
         <div className="sequence"> Sequence: {sequence} </div>
         <div className="clearsequence"> Clear Sequence: {clearSequence} </div>
+        <div className="refs"> username: {refs.refs.refs.age.current.value} </div>
       </footer>
       <Dialog
         open={showModal}

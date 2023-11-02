@@ -1,11 +1,11 @@
 import CardArray from "./CardArray";
 
 
-const Game = () => {
+const Game = (refs) => {
 
     return ( 
         <>
-        <CardArray/>
+        <CardArray refs={refs}/>
         </>
      );
 }

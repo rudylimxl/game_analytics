@@ -28,7 +28,8 @@ const writePlay = async (
   moves_to_win,
   sequence,
   clear_sequence,
-  complete
+  complete,
+  username
 ) => {
   const rows = [
     {
@@ -39,6 +40,7 @@ const writePlay = async (
       sequence: sequence,
       clear_sequence: clear_sequence,
       game_complete: complete,
+      username: username
     },
   ];
   await bigquery.dataset("GASEIF14").table("Plays").insert(rows);

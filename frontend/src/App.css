@@ -43,6 +43,29 @@ h1 {
   gap: 10px;
 }
 
+.flexCompany {
+  display: flex;
+  width: 100%;
+  align-content: stretch;
+  /* align-items: stretch; */
+  /* justify-content: center; */
+}
+
 .flex > * {
   flex: 1;
+}
+
+.iframe {
+  flex-grow: 4;
+}
+
+.flexRight {
+  flex-grow:4;
+  display: flex;
+  flex-direction: column;
+}
+
+.lookerDash {
+  flex-grow:5;
+  display: flex;
 }

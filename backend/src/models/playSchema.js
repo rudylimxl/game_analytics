@@ -24,6 +24,7 @@ const playSchema = [
     type: "STRING",
   },
   { name: "game_complete", type: "BOOLEAN" },
+  { username: "username" , type: "STRING"}
 ];
 
 export default playSchema;
