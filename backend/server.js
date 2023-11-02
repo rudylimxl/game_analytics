@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import express from "express";
 import playRouter from "./src/routes/playRoutes.js";
+import lookerRouter from "./src/routes/lookerRoutes.js";
 // import connectToDatabase from "./src/config/mongoDB.js";
 // import postRouter from "./src/routes/postRouter.js";
 // import userRouter from "./src/routes/userRouter.js";
@@ -47,11 +48,12 @@ app.use(express.urlencoded({ extended: false }));
 // app.use("/users", userRouter);
 // app.use("/posts", postRouter);
 // app.use("/search", searchRouter);
-// app.use("/", function (req, res) {
-//   res.send(" <h1>Hello!</h1> ");
-// });
+app.use("/greet", function (req, res) {
+  res.json({message: "Hello world!", test: "This is just a test"});
+});
 
 app.use("/plays", playRouter);
+app.use("/api", lookerRouter);
 
 // app.use((err, req, res, next) => {
 //   err.statusCode = err.statusCode || 500;

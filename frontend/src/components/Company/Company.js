@@ -1,13 +1,22 @@
 import ResponsiveAppBarCompany from "../NavbarCompany";
+import DashboardLooker from "./DashboardLooker";
 import SidebarCompany from "./DrawerCompany";
 
 const Company = () => {
   return (
     <div>
       <ResponsiveAppBarCompany />
-      <div className="flex">
+      <div className="flexCompany">
         <SidebarCompany />
-        <h1>This is company's main screen</h1>
+        <div className="flexRight">
+          <div className="muiCharts">
+            {/* <LineChart/> */}
+            Line Test
+          </div>
+          <div className="lookerDash">
+            <DashboardLooker/>
+          </div>
+        </div>
       </div>
     </div>
   );
