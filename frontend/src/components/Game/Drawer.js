@@ -28,6 +28,10 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import { TextField } from "@mui/material";
+import EmailIcon from '@mui/icons-material/Email';
+import WcIcon from '@mui/icons-material/Wc';
+import PublicIcon from '@mui/icons-material/Public';
+import ChildCareIcon from '@mui/icons-material/ChildCare';
 
 function Copyright(props) {
   return (
@@ -124,31 +128,31 @@ export default function Sidebar(props) {
               <React.Fragment>
                 <ListItemButton>
                   <ListItemIcon>
-                    <DashboardIcon />
+                  <PeopleIcon />
                   </ListItemIcon>
                   <TextField defaultValue={"User1"} placeholder="Username" inputRef={props.refs.username}></TextField>
                 </ListItemButton>
                 <ListItemButton>
                   <ListItemIcon>
-                    <ShoppingCartIcon />
+                  <EmailIcon />
                   </ListItemIcon>
                   <TextField defaultValue={"user@test.com"} placeholder="Email" inputRef={props.refs.email}></TextField>
                 </ListItemButton>
                 <ListItemButton>
                   <ListItemIcon>
-                    <PeopleIcon />
+                    <ChildCareIcon />
                   </ListItemIcon>
                   <TextField defaultValue={"30"} placeholder="Age" inputRef={props.refs.age}></TextField>
                 </ListItemButton>
                 <ListItemButton>
                   <ListItemIcon>
-                    <BarChartIcon />
+                  <WcIcon />
                   </ListItemIcon>
                   <TextField defaultValue={"M"} placeholder="Gender" inputRef={props.refs.gender}></TextField>
                 </ListItemButton>
                 <ListItemButton>
                   <ListItemIcon>
-                    <LayersIcon />
+                  <PublicIcon />
                   </ListItemIcon>
                   <TextField defaultValue={"Singapore"} placeholder="Location" inputRef={props.refs.location}></TextField>
                 </ListItemButton>

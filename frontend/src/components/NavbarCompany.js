@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom'
 
-const pages = ['Game Settings', 'Analytics'];
+const pages = ['Contact Us', 'Analytics'];
 const settings = ['Logout'];
 
 function ResponsiveAppBarCompany() {
@@ -56,7 +56,7 @@ function ResponsiveAppBarCompany() {
               textDecoration: 'none',
             }}
           >
-            Let's play!
+            Retail Analytics Portal   
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -112,7 +112,7 @@ function ResponsiveAppBarCompany() {
               textDecoration: 'none',
             }}
           >
-            Let's Play!
+            Retail Analytics Portal   
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

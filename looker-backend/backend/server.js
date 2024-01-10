@@ -27,8 +27,11 @@ const authenticatedUser = {
     "permissions": [
       // access_data is necessary for every embed user.
       "access_data",
+      "create_alerts",
+      "download_with_limit",
       // see_looks lets user view existing looks
       "see_looks",
+      "see_sql",
       // see_user_dashboards lets users view existing dashboards 
       "see_user_dashboards",
       // explore lets users use the explore experience

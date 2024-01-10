@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/bigquery": "^7.3.0",
+    "@google-cloud/bigquery-data-exchange": "^1.0.1",
     "@looker/sdk": "^23.16.0",
     "@looker/sdk-node": "^23.16.0",
     "@looker/sdk-rtl": "^21.6.1",

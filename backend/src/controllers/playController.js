@@ -1,5 +1,6 @@
 import writePlay from "../services/writeDB.js";
 import writeUser from "../services/writeDBuser.js";
+import callListDataExchanges from "../services/listAnalyticsHub.js";
 
 const writePlayData = (req, res) => {
   const length = writePlay(
@@ -24,4 +25,9 @@ const writeUserData = (req, res) => {
   res.json({ written_rows_user: length });
 };
 
-export { writePlayData , writeUserData };
+const list = async (req, res) => {
+  const resp = await callListDataExchanges();
+  await res.json({msg:resp})
+}
+
+export { writePlayData , writeUserData, list };

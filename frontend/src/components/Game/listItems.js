@@ -15,13 +15,13 @@ export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+        <PeopleIcon />
       </ListItemIcon>
       <TextField defaultValue={"User1"} placeholder="Username"></TextField>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+      <PeopleIcon />
       </ListItemIcon>
       <TextField defaultValue={"user@test.com"} placeholder="Email"></TextField>
     </ListItemButton>
@@ -33,13 +33,13 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <BarChartIcon />
+      <PeopleIcon />
       </ListItemIcon>
       <TextField defaultValue={"M"} placeholder="Gender"></TextField>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <LayersIcon />
+      <PeopleIcon />
       </ListItemIcon>
       <TextField defaultValue={"Singapore"} placeholder="Location"></TextField>
     </ListItemButton>

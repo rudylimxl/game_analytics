@@ -19,7 +19,8 @@ const DashboardLooker = () => {
         // };
         // getData();
 
-        axios.get("http://localhost:8002/looker_auth?src=/embed/dashboards/1iMkLHn2UxIg0YbBQ4p7Ve")
+        // axios.get("http://localhost:8002/looker_auth?src=/embed/dashboards/1iMkLHn2UxIg0YbBQ4p7Ve")
+        axios.get("http://localhost:8002/looker_auth?src=/embed/dashboards/1")
         .then(function(response) {
             setUrl(response.data.url)
         }) 
