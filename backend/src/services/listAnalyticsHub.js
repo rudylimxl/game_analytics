@@ -1,12 +1,13 @@
 import { AnalyticsHubServiceClient } from '@google-cloud/bigquery-data-exchange';
+import "dotenv/config";
 
 const authOptions = {
   keyFilename: "../backend/gcp-service-acc.json",
-  projectID: "interviewdemo-359821",
+  projectID: process.env.projectID,
 };
 
 const bigquerydataexchange = new AnalyticsHubServiceClient(authOptions);
-const parent = 'projects/624018808789/locations/asia-southeast1/dataExchanges/rudy_analytics_hub_demo_18b1197598c'
+const parent = process.env.parent;
 
 //get list of analytics hub listing
 async function callListDataExchanges() {

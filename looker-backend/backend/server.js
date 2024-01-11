@@ -68,6 +68,6 @@ app.get('/looker_auth', function (req, res) {
   })
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(8002, () => {
+  console.log(`Looker backend listening on port 8002`)
 })
