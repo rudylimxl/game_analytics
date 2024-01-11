@@ -252,7 +252,7 @@ const CardArray = (refs) => {
         </div>
         <div className="sequence"> Sequence: {sequence} </div>
         <div className="clearsequence"> Clear Sequence: {clearSequence} </div>
-        <div className="refs"> username: {refs.refs.refs.age.current.value} </div>
+        {/* <div className="refs"> username: {refs.refs.refs.age.current.value} </div> */}
       </footer>
       <Dialog
         open={showModal}

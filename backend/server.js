@@ -3,57 +3,20 @@ import cors from "cors";
 import "dotenv/config";
 import express from "express";
 import playRouter from "./src/routes/playRoutes.js";
-import lookerRouter from "./src/routes/lookerRoutes.js";
-// import connectToDatabase from "./src/config/mongoDB.js";
-// import postRouter from "./src/routes/postRouter.js";
-// import userRouter from "./src/routes/userRouter.js";
-// import searchRouter from "./src/routes/searchRouter.js";
-// import passport from "passport";
-// import session from "express-session";
-// import initializePassport from "./src/config/passport-config.js";
-// import authRouter from "./src/routes/authRouter.js";
 
 const app = express();
-// connectToDatabase();
-// initializePassport(passport);
-
-// const checkAuthenticated = (req, res, next) => {
-//   if (!req.isAuthenticated()) {
-//     res.status(401).send("Please login first");
-//   }
-//   next();
-// };
 
 //Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
-// app.use(
-//   session({
-//     secret: process.env.SECRET_KEY,
-//     saveUninitialized: false,
-//     resave: false,
-//     cookie: { maxAge: 10000 },
-//   })
-// );
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-//Routes
-// app.use("/", authRouter);
-// app.use("/users", checkAuthenticated);
-// app.use("/posts", checkAuthenticated);
-// app.use("/users", userRouter);
-// app.use("/posts", postRouter);
-// app.use("/search", searchRouter);
 app.use("/greet", function (req, res) {
   res.json({message: "Hello world!", test: "This is just a test"});
 });
 
 app.use("/plays", playRouter);
-app.use("/api", lookerRouter);
 
 // app.use((err, req, res, next) => {
 //   err.statusCode = err.statusCode || 500;
@@ -63,6 +26,6 @@ app.use("/api", lookerRouter);
 //   });
 // });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on ${process.env.PORT}`);
+app.listen(8000, () => {
+  console.log(`Server running on 8000`);
 });

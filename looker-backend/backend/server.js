@@ -27,8 +27,11 @@ const authenticatedUser = {
     "permissions": [
       // access_data is necessary for every embed user.
       "access_data",
+      "create_alerts",
+      "download_with_limit",
       // see_looks lets user view existing looks
       "see_looks",
+      "see_sql",
       // see_user_dashboards lets users view existing dashboards 
       "see_user_dashboards",
       // explore lets users use the explore experience
@@ -65,6 +68,6 @@ app.get('/looker_auth', function (req, res) {
   })
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(8002, () => {
+  console.log(`Looker backend listening on port 8002`)
 })

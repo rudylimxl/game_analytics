@@ -40,14 +40,14 @@ export default function SignInSide() {
           md={5}
           sx={{
             backgroundImage:
-              "url(https://source.unsplash.com/random?wallpapers)",
+              "url(https://retail-merchandiser.com/wp-content/uploads/sites/8/2023/05/FMCG-800x445.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
                 ? t.palette.grey[50]
                 : t.palette.grey[900],
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "left",
           }}
         />
         <Grid item xs={12} sm={8} md={7} component={Paper} elevation={6} square>
@@ -199,10 +199,10 @@ export default function SignInSide() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               /> */}
-              <Typography variant="h4">Login as..</Typography>
+              <Typography variant="h4">Login to..</Typography>
 
               <div className="login-button-container">
-                <Link href="/game">
+                {/* <Link href="/game">
                   <Button
                     fullHeight
                     fullWidth
@@ -211,10 +211,10 @@ export default function SignInSide() {
                   >
                     Player
                   </Button>
-                </Link>
+                </Link> */}
                 <Link href="/company">
                   <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                    Game Developer
+                    Retail Analytics Portal
                   </Button>
                 </Link>
               </div>
