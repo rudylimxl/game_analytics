@@ -2,7 +2,7 @@
 This example illustrates a retail company building a data-sharing hub using Google Cloud technology, mainly BigQuery Analytics Hub + Looker 
 
 Analytics Hub is a data exchange platform that enables you to share data and insights at scale across organizational boundaries with a robust security. Here, the retail company creates a data 'supermarket', a collaborative data sharing space where users (internal and external) can explore and subscribe/use datasets. Like a supermarket, data consumers are free to leave ratings, reviews, comments, etc. Built using BigQuery Analytics Hub API.
-<img src="/[images/output/video1.gif](https://github.com/rudylimxl/game_analytics/assets/103036639/4cf099ae-9fc8-4797-9984-d3c9b2d9444f)" height="500"/>
+<img src="https://github.com/rudylimxl/game_analytics/assets/103036639/4cf099ae-9fc8-4797-9984-d3c9b2d9444f" height="500"/>
 
 
 Beyond sharing data, the retail company provides embedded analytics and insight by utilizing GCP’s data modeling capability to provide standardized, universal data layer for all data applications, as well as directly embedding dashboards. Built using Looker API.
